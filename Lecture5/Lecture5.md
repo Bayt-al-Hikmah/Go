@@ -611,7 +611,7 @@ After sending all five jobs, `main` "closes the factory" by calling `close(jobs)
 
 This leads to the "graceful shutdown." When a worker finishes its final job, it loops back and checks the `jobs` channel. It finds the channel is now **both empty and closed**, which causes its `for range` loop to terminate, allowing the goroutine to exit. Once `main` has collected all 5 results, its loop finishes, and the program exits cleanly, all workers having shut down.
 
-![image](image.png)
+<img src="image.png" height="800px">
 
 
 #### The `select` Statement
